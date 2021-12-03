@@ -7,15 +7,15 @@ import { RegistrarComponent } from './usuario/registrar/registrar.component';
 const routes: Routes = [
   {
     path:"",
-    component: LoginComponent
+    component: InicioComponent
   },
   {
     path:"registrarse", // Lo nombro como yo desee
     component: RegistrarComponent
   },
   {
-    path:"inicio", // Lo nombro como yo desee
-    component: InicioComponent
+    path:"login", // Lo nombro como yo desee
+    component: LoginComponent
   }
 ];
 

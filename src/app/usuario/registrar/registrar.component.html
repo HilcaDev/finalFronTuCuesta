@@ -6,27 +6,27 @@
         <div class="contact-form"> 
             <span class="circle one"></span>
             <span class="circle two"></span>
-            <form>
+            <form [formGroup]="datosUsuario" (ngSubmit)="crearUsuario()">
                 <h3 class="title"> Registro Usuarios </h3>
                 <div class="input-container">
                     <label class="form-label" for="">Nombre</label>
-                    <input type="text" name="nombre" class="form-control input">
+                    <input formControlName="nombre"  type="text" name="nombre" class="form-control input">
                 </div>
                 <div class="input-container">
                     <label class="form-label" for="">Correo</label>
-                    <input type="email" name="email" class="form-control input">
+                    <input formControlName="correo" type="email" name="email" class="form-control input">
                 </div>
                 <div class="input-container">
                     <label class="form-label" for="">Usuario</label>
-                    <input type="text" name="usuario" class="form-control input">
+                    <input formControlName="username" type="text" name="usuario" class="form-control input">
                 </div>
                 <div class="input-container">
                     <label class="form-label" for="">Contraseña</label>
-                    <input type="password" name="contraseña" class="form-control input">
+                    <input formControlName="password" type="password" name="contraseña" class="form-control input">
                 </div>
-                <a type="submit" value="enviar" class="btn">Enviar</a>
+                <button type="submit" value="enviar" class="btn mb-3">Registrar</button>
                 <div class="text-center">
-                    <a routerLink="" class="mt-5">Ya tengo una cuenta</a>
+                    <a routerLink="/login" class="mt-5">Ya tengo una cuenta</a>
                 </div>
             </form>
         </div>

@@ -2,16 +2,18 @@
     <div class="card card-container">
         <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
         <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin">
-            <span id="reauth-usuario" class="reauth-usuario"></span>
+        <form [formGroup]="inicioForm" (ngSubmit)="entrar()" class="form-signin">
+            <span  id="reauth-usuario" class="reauth-usuario"></span>
+            
             <label class="form-label">Usuario</label>
-            <input type="text" id="inputUsuario" class="form-control" placeholder="Ingrese su usuario">
+            <input formControlName="username" type="text" id="inputUsuario" class="form-control" placeholder="Ingrese su usuario">
+            
             <label class="form-label">Contraseña</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Ingrese su contraseña">
-            <a routerLink="inicio"><button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button></a>
+            <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Ingrese su contraseña">
+            <a><button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Ingresar</button></a>
         </form><!-- /form -->
-        <a routerLink="registrarse" class="registrarse">
-            Registrarse
-        </a>
+        <a routerLink="/registrarse" class="registrarse">Registrarse</a>
+        <a routerLink="" class="registrarse mt-1">Pagina Principal</a>
+
     </div><!-- /card-container -->
 </div>

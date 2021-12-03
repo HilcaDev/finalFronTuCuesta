@@ -2,46 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-transform: capitalize;
     transition: all .2s linear ;
     text-decoration: none;
 }
 
-html{
-    font-size: 50%;
-}
-
-body{
-    overflow-x: hidden;
-}
-
-.heading{
-    margin:2rem;
-    padding-top: 6rem;
-    display: inline-block;
-    font-size: 3.5rem;
-    color:#845cc5;
-    position: relative;
-    letter-spacing: .2rem;
-}
-  
-.heading::before, .heading::after{
-    content: '';
-    position: absolute;
-    height: 2.5rem;
-    width: 2.5rem;
-    border-top:.4rem solid #845cc5;
-    border-left:.4rem solid #845cc5;
-}
-
-.heading::before{
-    top:5.8rem; left: -2rem;
-}
-
-.heading::after{
-    bottom:-.5rem; right: -2rem;
-    transform: rotate(180deg);
-}
 
 .btn{
     outline: none;
@@ -66,8 +30,8 @@ body{
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 1rem 2rem;
-    position: fixed;
+    padding: 1rem 0rem;
+    position: absolute;
     top: 0; left: 0;
     z-index: 100;
 }
@@ -82,15 +46,17 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
 }
 
 .header .navbar ul li{
-   margin: 0 1.5rem;
+   margin: 0 0.5rem;
 }
 
 .header .navbar ul li a{
-    font-size: 1.8rem;
+    font-size: 1.9rem;
     color: #fff;
+    
 }
 
 .header .navbar ul li a:hover{
@@ -109,7 +75,7 @@ body{
 
 .home{
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
     background:linear-gradient(purple,rgb(133, 105, 185));
     display: flex;
     align-items: center;
@@ -208,38 +174,39 @@ body{
   }
   
 /*About us*/
+
 .about{
-    min-height: 100vh;
     text-align: center;
     position: relative;
     overflow: hidden;
 }
   
-.about .row{
+.row{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding:0 4rem;
+    padding:0 2rem;
 }
 
 .about .row .content{
-    text-align: left;
+    width: 60%;
 }
 
-.about .row .image img{
-    width: 30vw;
+.image{
+  width: 40%;
 }
 
-.about .row .content h3{
-    font-size: 2rem;
+.about .row .content h2, .subtitle{
+    font-size: 2.7rem;
     color: #845cc5;
     
 }
 
-.about .row .content p{
-    font-size: 1.5rem;
+p{
+    font-size: 1.3rem;
     color: #333;
     padding:1rem 0;
+    text-align: justify;
 }
 
 .about::before, .about::after{
@@ -251,63 +218,90 @@ body{
 }
 
 .about::before{
-    height:50rem;
-    width:50rem;
-    background:#ccc;
-    bottom:-10rem; left:-10rem;
+  height:20rem;
+  width:20rem;
+  background:#845cc5;
+  bottom:-6rem; left:-7rem;
 }
 
 .about::after{
-    height:60rem;
-    width:60rem;
-    background:#845cc5;
-    top:-10rem; right:-10rem;
+  height:30rem;
+  width:30rem;
+  background:#845cc5;
+  top:1rem; right:-3rem;
 }
 
 
 
-/* media queries  */
-
-@media (max-width:768px){
-
-    html{
-      font-size: 50%;
-    }
-  
-    .header .fa-bars{
-      display: block;
-    }
-  
-    .header .navbar{
-      position: fixed;
-      top:-120%; left: 0;
-      height: auto;
-      width: 100%;
-      background-color: #fff;
-      z-index: 1000;
-      border-top: .1rem solid rgba(0,0,0,.3);
-    }
-  
-    .header .navbar ul{
-      height: 100%;
-      width: 100%;
-      flex-flow: column;
-    }
-  
-    .header .navbar ul li{
-      margin:1rem 0;
-    }
-  
-    .header .navbar ul li a{
-      color: #444;
-      font-size: 2.4rem;
-    }
-  
-    .header .fa-times{
-      transform: rotate(180deg);
-    }
-  
-    .header .nav-toggle{
-      top:5.8rem;
-    }
+.subtitle-h3{
+  color: #845cc5;
 }
+
+/*Preguntas frecuentes*/
+
+.alternative{
+  background-color:#845cc5;
+}
+
+.subtitleDark{
+  font-size: 2.5rem;
+}
+
+.accordion-header{
+  background-color: #845cc5;
+  margin:1rem 0;
+  box-shadow: .1rem .1rem .3rem rgba(0,0,0,.3);
+  cursor: pointer;
+}
+
+.accordion-header span{
+  display: inline-block;
+  text-align: center;
+  height:4rem;
+  width:5rem;
+  line-height: 4rem;
+  font-size: 2rem;
+  background:#fff;
+  color:#333;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+.accordion-header h3{
+  display: inline;
+  color: #845cc5;
+  font-weight: 400;
+  padding-left: .5rem;
+  font-size: 1.5rem;
+}
+
+.accordion-body{
+  padding:1rem;
+  color: #333;
+  box-shadow: .1rem .1rem .3rem rgba(0,0,0,.3);
+  font-size: 1.3rem;
+
+}
+
+div.avatar {
+  /* cambia estos dos valores para definir el tamaño de tu círculo */
+  width: 500px;
+  height:500px;
+  /* los siguientes valores son independientes del tamaño del círculo */
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 50%;
+  background-size: 100% auto;
+  margin: 0 auto;
+}
+
+/*ubicacion*/
+
+.map{
+  margin: 0 100px;
+}
+
+ul li{
+  color: #333;
+}
+
+

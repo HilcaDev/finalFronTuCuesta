@@ -1,23 +1,24 @@
 <!--Header-->
 <header class="header">
-    <a href="#" class="logo">TuCuesta</a>
+    <a class="logo">TuCuesta</a>
     <div class="fas fa-bars"></div>
     <nav class="navbar">
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Nuestros Servicios</a></li>
-            <li><a href="#">Revistas</a></li>  
+            <li><a >Inicio</a></li>
+            <li><a>Nosotros</a></li>
+            <li><a>Servicios</a></li>
+            <li><a>FAQS</a></li>  
+            <li><a>Contacto</a></li>  
+            <li><a routerLink="login">Sing In</a></li>  
         </ul>
     </nav>
 </header>
 
 <!--seccion Home-->
 <section id="home" class="home">
-
     <h1 class="banner">Encuestas Electorales</h1>
     <h3 class="slogan">Dejanos saber tu opinión</h3>
-    <a href="#"><button>Registrate</button></a>
+    <a routerLink="/registrarse"><button>Registrate</button></a>
     
     
     <div class="wave wave1"></div>
@@ -30,20 +31,142 @@
     
 </section>
 
-<section id="about" class="about">
-    <h1 class="heading">Nosotros</h1>
-
-    <div class="row">
-        
+<!--seccion nosotros-->
+<section id="about" class="about mb-5">
+    <div class="row">    
       <div class="content">
-        <h3>We build websites that build your busines</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea amet iure deserunt doloremque voluptate distinctio rerum! Quas sunt inventore illum facere minus voluptas fugit, magni quidem cumque! Animi, illo magni.</p>
-        <a href="#"><button class="btn">read more</button></a>
+        <h2 class="mt-5">NOSOTROS</h2>
+        <p>Somos una empresa con más de 10 años de experiencia en recolección de opinión política y pública, y
+          nuestra misión es generar información confiable y útil para nuestros clientes, siendo un aliado para la toma de decisiones y determinar tendencias. </p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora quis sapiente minus eaque, molestiae eligendi laudantium fugiat expedita eum nihil vel distinctio voluptate nemo odit. Corrupti tempore praesentium rem eveniet.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat illo aliquam aperiam molestiae cupiditate quis eius nemo. Deserunt et velit error qui, dolor quo est quas ab nihil eos harum!</p>
       </div>
-    
-      <div class="image img-fluid">
-        <img src="https://image.freepik.com/free-vector/contact-us-concept-landing-page_52683-12860.jpg" alt="">
-      </div>
+      <img class="image" src="https://res.cloudinary.com/khiasma123/image/upload/v1587563816/Illustration_principale_2_q3hv9p.png" alt="">
     </div>
 </section>
+
+<!--seccion Porque elegirnos-->
+<section id="servicios" class="p-5">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-md">
+        <img class="img-fluid" src="/assets/img/Winnerss.png" alt="">
+      </div>
+      <div class="col-md p-5"> 
+        <h2 class="mb-5 text-center subtitle">PORQUE ELEGIRNOS ?</h2>
+        <h3 class="card-title mb-1 subtitle-h3">Soporte 24/7</h3>
+        <p class="card-text mb-3">
+          Contamos con una línea directa de atención las 24 horas del día, los 7 días de la semana.
+        </p>
+        <h3 class="card-title mb-1 subtitle-h3">Encuestas Gratuitas</h3>
+        <p class="card-text mb-3">
+          Cree un cuestionario, lleve a cabo la encuesta y analice las respuestas recogidas.
+        </p>
+        <h3 class="card-title mb-1 subtitle-h3">Publicaciónes Reguladas</h3>
+        <p class="card-text mb-3">
+          La publicación de las encuestas electorales en el país ha estado regulada desde el año de 2001.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Preguntas frecuentes-->
+<section id="preguntas" class="p-5 alternative">
+  <div class="container">
+    <div class="row align-items-center justify-content-between">
+
+      <!--Acordeon-->
+      <div class="col-md p-5"> 
+        <h2 class="mb-5 text-center text-light subtitleDark">PREGUNTAS FRECUENTES</h2>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>+</span>
+              <h3 id="headingOne" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                  Soporte 24/7
+              </h3>
+            </div>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Contamos con una línea directa de atención las 24 horas del día, los 7 días de la semana.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>+</span>
+              <h3 id="headingTwo" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                Encuestas Gratuitas
+              </h3>
+            </div>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Cree un cuestionario, lleve a cabo la encuesta y analice las respuestas recogidas.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>+</span>
+              <h3 id="headingThree" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                Publicaciónes Reguladas
+              </h3>
+            </div>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                La publicación de las encuestas electorales en el país ha estado regulada desde el año de 2001.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Imagen-->
+      <div class="col-md">
+        <div class="avatar" style="background-image: url(/assets/img/preguntas.jpg)"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Ubicacion-->
+<section id="contacto" class="p-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md">
+        <h2 class="mb-5 text-center subtitle">INFORMACIÓN DE CONTACTO</h2>
+        <ul class="list-group list-group-flush lead">
+          <li class="list-group-item">
+            <span class="fw-bold">Localización Principal:</span> Tv 38bc #66-50 
+          </li>
+          <li class="list-group-item">
+            <span class="fw-bold">Ciudad:</span> Bogotá-Colombia
+          </li>
+          <li class="list-group-item">
+            <span class="fw-bold">Teléfono:</span> 345 6789
+          </li>
+          <li class="list-group-item">
+            <span class="fw-bold">Celular:</span> (+55) 324 557 8976
+          </li>
+          <li class="list-group-item">
+            <span class="fw-bold">Correo:</span> tuCuesta@gmail.com
+          </li>
+        </ul>
+      </div>
+      <div class="col-md"> 
+        <iframe  class="map" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d254508.51641702006!2d-74.2478938!3d4.6482837!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sbr!4v1638471689429!5m2!1ses-419!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>      </div>
+    </div>
+  </div>
+</section>
+
+
+<!--Footter-->
+<footer class="alternative alternativeT">
+  <div class="container p-2 alternative">
+    <p class="lead text-light text-center">Copyright &copy; 2021 Frontend TuCuesta</p>
+  </div>
+</footer>
+
+
+
 
