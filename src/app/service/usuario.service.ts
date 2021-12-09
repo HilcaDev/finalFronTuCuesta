@@ -32,9 +32,16 @@ export class UsuarioService {
     return this.http.post(`${this.baseURL}/api/usuarios/login`,dato,this.headers)
     .pipe(
       tap((data: any) =>{
+        // Como hacer que los datos se mantengan aun cuando se refresque la pagina.
         if(data.mensaje=="Se accedió correctamente"){
           localStorage.setItem("token",data.token)
+          localStorage.setItem("id",data.id)
+          localStorage.setItem("nombre",data.nombre)
+          localStorage.setItem("correo",data.correo)
+          localStorage.setItem("username",data.username)
           this.usuario=data
+          //console.log("soy servicio")
+          //console.log(this.Usuario)
         }
       }),
       map(res=>res)

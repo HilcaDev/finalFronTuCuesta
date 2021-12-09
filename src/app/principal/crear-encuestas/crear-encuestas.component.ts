@@ -18,7 +18,13 @@ export class CrearEncuestasComponent implements OnInit {
   segundoCandidato!: Candidato;
 
 
-  usuario: Usuario = this.usuarioService.Usuario;
+  //usuario: Usuario = this.usuarioService.Usuario;
+  usuario: Usuario = {
+    id:localStorage.getItem("id")||'',
+    nombre:localStorage.getItem("nombre")||'',
+    correo:localStorage.getItem("correo")||'',
+    username:localStorage.getItem("username")||''
+  }
 
   encuestaForm!: FormGroup;
 
@@ -39,6 +45,8 @@ export class CrearEncuestasComponent implements OnInit {
       usuario: [this.usuario]
 
     })
+    console.log("soy crear encuestas")
+    console.log(this.usuario)
     this.traerCandidatos()
   }
 
@@ -52,7 +60,6 @@ export class CrearEncuestasComponent implements OnInit {
     this.candidatos.forEach((element:any) => {
       if(this.encuestaForm.controls['candidato1'].value==element.id){
         this.primerCandidato=element
-
         this.encuestaForm.controls['candidato1'].setValue(element)
 
       }

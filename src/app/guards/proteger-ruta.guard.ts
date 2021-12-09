@@ -11,7 +11,6 @@ export class ProtegerRutaGuard implements CanActivate, CanLoad {
   constructor(private usuarioService: UsuarioService, private router:Router){}
 
   canActivate(): Observable<boolean> | boolean {
-    // si se cambia a false, no va  a dejar ver la pagina
     return this.usuarioService.verificarToken().pipe(
       tap((valido) => {
         if(!valido){
