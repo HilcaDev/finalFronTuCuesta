@@ -1,0 +1,44 @@
+<app-nav></app-nav>
+<div class="contenedor">
+  <div class="row">
+    <h1 class="text-center mt-5" >CREAR ENCUESTA</h1>
+    <div class="container mt-3 col-5 fondo mb-5">
+      <form [formGroup]="encuestaForm" (ngSubmit)="agregar()">
+        <div class="mb-3">
+          <label  class="form-label colorT">Fecha</label>
+          <input type="date" placeholder="Ingrese" formControlName="fecha" class="form-control size">
+        </div>
+        <div class="mb-3">
+          <label  class="form-label colorT">Candidato1</label>
+          <select class="form-control" formControlName="candidato1">
+              <option *ngFor="let item of candidatos" value="{{item.id}}">{{item.nombre}}</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label  class="form-label colorT">Candidato2</label>
+          <select class="form-control" formControlName="candidato2">
+              <option *ngFor="let item of candidatos" value="{{item.id}}">{{item.nombre}}</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label  class="form-label colorT">Votos candidato1</label>
+          <input type="number" formControlName="votoscandidato1" placeholder="Ingrese" class="form-control size">
+        </div>
+
+        <div class="mb-3">
+          <label  class="form-label colorT">Votos candidato2</label>
+          <input type="number" formControlName="votoscandidato2" placeholder="Ingrese" class="form-control size">
+        </div>
+        <div class="text-center">
+          <button class="btn btn-primary btn-lg">Guardar</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-lg-6 d-flex justify-content-center align-items-center">
+      <img class="img-fluid" alt="" src="https://media.istockphoto.com/vectors/hands-held-high-vector-id667615016?k=20&m=667615016&s=612x612&w=0&h=7P4NTSOmq3svtcDA-z6gB0jwMSZz9JGIRn1BXDcrJZ4=">
+    </div>
+  </div>
+</div>
+
+
+

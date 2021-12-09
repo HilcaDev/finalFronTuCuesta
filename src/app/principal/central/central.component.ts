@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Encuestas } from 'src/app/models/encuestas.model';
 import { CandidatoService } from 'src/app/service/candidato.service';
+import { EncuestaService } from 'src/app/service/encuesta.service';
 
 @Component({
   selector: 'app-central',
@@ -8,15 +10,18 @@ import { CandidatoService } from 'src/app/service/candidato.service';
 })
 export class CentralComponent implements OnInit {
 
-  constructor(private candidatoService: CandidatoService) { }
+  encuestas: Encuestas[] = [];
+
+  constructor(private encuestaService: EncuestaService) { }
 
   ngOnInit(): void {
-    this.consumirCandidato()
+    this.traerencuestas();
   }
 
-  consumirCandidato(){
-    return this.candidatoService.traerCandidatos().subscribe(respuesta => {
-      console.log(respuesta)
+  traerencuestas(){
+    this.encuestaService.obtenerEncuestas().subscribe((encuestas:any) =>{
+      console.log(encuestas)
+      this.encuestas=encuestas;
     })
   }
 

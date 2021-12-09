@@ -10,25 +10,9 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 export class RegistrarComponent implements OnInit {
 
   datosUsuario!: FormGroup;
-  constructor(private usuarioService: UsuarioService, private fb:FormBuilder) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.datosUsuario = this.fb.group({
-      //Tiene que ir con los mismos nombres que se definio en el Model Usuario
-      nombre:[""],
-      correo:[""],
-      username:[""],
-      password:[""]
-      
-    })
-    
   }
-
-  crearUsuario(){
-    //Usamos el servicio que importamos
-    this.usuarioService.registrarUsuarios(this.datosUsuario.value).subscribe(respuesta => {
-      console.log(respuesta)
-    })
-  }
-
 }
+

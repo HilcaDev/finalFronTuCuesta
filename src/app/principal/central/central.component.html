@@ -1,1 +1,28 @@
-<p>central works!</p>
+<app-nav></app-nav>
+<div class="container mt-5 ">
+  <div class="circulo"></div>
+  <h1 class="text-center m-5">Listado Encuestas</h1>
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th scope="col" class="colorT">Fecha</th>
+        <th scope="col" class="colorT">Usuario</th>
+        <th scope="col" class="colorT">Candidato1</th>
+        <th scope="col" class="colorT">Candidato2</th>
+        <th scope="col" class="colorT">Votos Candidato1</th>
+        <th scope="col" class="colorT">Votos Candidato2</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of encuestas">
+      <tr>
+        <td>{{item.fecha}}</td>
+        <td>{{item.usuario.nombre}}</td>
+        <td>{{item.candidato1.nombre}}</td>
+        <td>{{item.candidato2.nombre}}</td>
+        <td>{{item.votoscandidato1}}</td>
+        <td>{{item.votoscandidato2}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

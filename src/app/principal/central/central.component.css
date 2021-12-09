@@ -1,0 +1,38 @@
+h1{
+  color: #845cc5;
+}
+
+table, thead{
+  border: 2px solid #847cec;
+}
+
+td{
+  border: none;
+}
+
+.colorT{
+  color: #908abe;
+  font-size: large;
+  font-weight: bold;
+}
+
+
+.circulo{
+  width:0;
+  height:0;
+  border-right: 50px solid transparent;
+  border-top: 50px solid #908abe;
+  border-left: 50px solid #908abe;
+  border-bottom: 50px solid #908abe;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  position: absolute;
+  top:85px;
+  left: 450px;
+  opacity: 0.5;
+}
+
+
+
+

@@ -1,0 +1,18 @@
+<app-nav></app-nav>
+<div class="container contenedor mt-5">
+  <h1 class="text-center my-5">LISTADO DE CANDIDATOS</h1>
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th class="colorT" scope="col">ID</th>
+        <th class="colorT" scope="col">Nombre</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of candidatos">
+      <tr>
+        <td>{{item.id}}</td>
+        <td>{{item.nombre}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

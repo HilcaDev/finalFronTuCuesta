@@ -13,9 +13,9 @@ export class LoginComponent implements OnInit {
   inicioForm!: FormGroup;
 
   constructor(
-    private usuarioService: UsuarioService, 
     private fb: FormBuilder,
-    private router:Router){ }
+    private usuarioService: UsuarioService,
+    private router: Router){ }
 
   ngOnInit(): void {
     this.inicioForm = this.fb.group({
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   entrar(){
-    this.usuarioService.ingresar(this.inicioForm.value).subscribe((data:any) => {
+    this.usuarioService.entrar(this.inicioForm.value).subscribe((data:any) => {
       console.log(data)
       if(data.mensaje=="Se accedió correctamente"){
         this.router.navigateByUrl("central")

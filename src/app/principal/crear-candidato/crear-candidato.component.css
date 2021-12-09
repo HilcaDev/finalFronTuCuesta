@@ -1,0 +1,28 @@
+
+.colorT{
+  color: #908abe;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+h1{
+  color: #847cec;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-around;
+}
+
+.redondeado{
+  border-radius: 25px;
+  background-color:#908abe ;
+  font-size: x-large;
+  opacity: 0.9;
+}
+
+input::placeholder {
+  color: #fff;
+  font-size: 1.4rem;
+}
+

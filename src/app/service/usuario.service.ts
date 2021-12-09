@@ -1,32 +1,64 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, tap } from 'rxjs';
+import { catchError, map, Observable, of, tap } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Usuario } from '../models/encuestas.model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  constructor(private peticion:HttpClient) { }
+  //Representa localhost:8080
+  baseURL= environment.baseURL;
+
+
+  private usuario!: Usuario;
+
+  get Usuario() {
+    return this.usuario;
+  }
+
+
+  constructor(private http:HttpClient) { }
 
   get headers(){
-      return {headers: {"Content-Type": "application/json"} }
-    }
-
-  registrarUsuarios(datos:any){
-    return this.peticion.post("http://localhost:8080/api/usuarios",datos,this.headers)
+    return {headers: {"Content-Type": "application/json"} }
   }
 
-  ingresar(datosLogin:any){
-    return this.peticion.post("http://localhost:8080/api/usuarios/login",datosLogin)
+
+  entrar(dato: any){
+    return this.http.post(`${this.baseURL}/api/usuarios/login`,dato,this.headers)
     .pipe(
-      //Permite obtener la info antes de enviarla a los componentes
-      tap((respuesta:any) => {
-        if(respuesta.mensaje=="Se accedió correctamente"){
-          localStorage.setItem("token",respuesta.hash);
+      tap((data: any) =>{
+        if(data.mensaje=="Se accedió correctamente"){
+          localStorage.setItem("token",data.token)
+          this.usuario=data
         }
       }),
-      map(respuesta => respuesta)
+      map(res=>res)
     )
   }
+
+
+  getToken(){
+    return localStorage.getItem("token") || '';
+  }
+
+  get headersToken(){
+    return {headers: {"Authorization": this.getToken()} }
+  }
+
+  verificarToken(): Observable<boolean> {
+    return this.http.get(`${this.baseURL}/api/verificar`,this.headersToken).
+    pipe(
+      map((res:any) => {
+        console.log(res)
+        return res.ok
+      }),
+      catchError(err => of(false))
+    )
+  }
+
 }

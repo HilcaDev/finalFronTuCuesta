@@ -1,0 +1,21 @@
+<app-nav></app-nav>
+<div class="row">
+  <h1 class="text-center mt-5">CANDIDATOS</h1>
+  <div class="col-lg-6">
+    <form class="m-5" [formGroup]="CandidatoForm" (ngSubmit)="agregar()">
+      <div class="mb-3">
+        <label  class="form-label colorT">ID</label>
+        <input type="text" formControlName="id" placeholder="Digite el id" class="form-control redondeado">
+      </div>
+      <div class="mb-3">
+        <label  class="form-label colorT">Nombre del candidato</label>
+        <input type="text" formControlName="nombre" placeholder="Digite el nombre del candidato" class="form-control redondeado" required>
+      </div>
+      <button type="submit" class="btn btn-primary my-3">Guardar</button>
+    </form>
+  </div>
+  <div class="col-lg-6">
+    <img class="img-fluid" alt="" src="https://media.istockphoto.com/vectors/online-job-interview-vector-illustration-vector-id1286341244?k=20&m=1286341244&s=612x612&w=0&h=LCTUeuLqA4OQG7wQlzKbIh4HhXhvK1bDWMmvLtufWPg=">
+  </div>
+</div>
+

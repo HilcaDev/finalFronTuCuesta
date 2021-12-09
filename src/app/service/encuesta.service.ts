@@ -1,25 +1,32 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EncuestaService {
 
-  constructor(private peticion: HttpClient) { }
+  baseURL= environment.baseURL;
 
-  guardarEncuesta(datos:any){
-    return this.peticion.post("http://localhost:8080/api/encuestas",datos)
+  constructor(private http: HttpClient) { }
+
+  getToken(){
+    return localStorage.getItem("token")||'';
   }
 
-  traerEncuestas(){
-    return this.peticion.get("http://localhost:8080/api/encuestas")
+  get headers(){
+    return {headers: {"Authorization": this.getToken()} }
   }
 
-  actualizarEncuesta(info:any){
-    return this.peticion.put("http://localhost:8080/api/encuestas",info)
+
+  obtenerEncuestas(){
+    return this.http.get(`${this.baseURL}/api/encuestas`,this.headers)
   }
 
-  
+  agregarEncuesta(data: any){
+    return this.http.post(`${this.baseURL}/api/encuestas`,data,this.headers)
+  }
+
 
 }
