@@ -6,23 +6,23 @@
     <div class="contact-form">
       <span class="circle one"></span>
       <span class="circle two"></span>
-      <form>
+      <form [formGroup]="datosUsuario" (ngSubmit)="crearUsuario()">
         <h3 class="title"> Registro Usuarios </h3>
         <div class="input-container">
             <label class="form-label" for="">Nombre</label>
-            <input  type="text" name="nombre" class="form-control input">
+            <input  type="text" formControlName="nombre" class="form-control input">
         </div>
         <div class="input-container">
             <label class="form-label" for="">Correo</label>
-            <input  type="email" name="email" class="form-control input">
+            <input  type="email" formControlName="correo" class="form-control input">
         </div>
         <div class="input-container">
             <label class="form-label" for="">Usuario</label>
-            <input  type="text" name="usuario" class="form-control input">
+            <input  type="text" formControlName="username" class="form-control input">
         </div>
         <div class="input-container">
             <label class="form-label" for="">Contraseña</label>
-            <input type="password" name="contraseña" class="form-control input">
+            <input type="password" formControlName="password" class="form-control input">
         </div>
         <button type="submit" value="enviar" class="btn mb-3">Registrar</button>
         <div class="text-center">

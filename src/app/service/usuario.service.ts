@@ -48,6 +48,9 @@ export class UsuarioService {
     )
   }
 
+  registrarUsuarios(datos:any){
+    return this.http.post("http://localhost:8080/api/usuarios",datos,this.headers)
+  }
 
   getToken(){
     return localStorage.getItem("token") || '';
